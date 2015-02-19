@@ -12,12 +12,21 @@ if (Meteor.isClient) {
 
 
   Router.route('polymer',{
-    path: '/issue/:n',
+    path: '/:n',
     template: 'polymer',
     data: function(){
       return this.params.n;
     }
-  })
+  });
+
+  Router.route('nested', {
+    path: '/issue/:n',
+    template: 'nested',
+    data: function(){
+      return this.params.n;
+    }
+
+  });
 
 
 Template.polymer.rendered = function () {
